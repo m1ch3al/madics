@@ -38,3 +38,8 @@ setup(
     #namespace_packages=['madis', 'cmre.autonomy', 'cmre.autonomy.d2caf']
 )
 
+import os.path
+homedir = os.path.expanduser("~")
+madics_folder = os.path.join(homedir, ".madics")
+os.system("mkdir {}".format(madics_folder))
+os.system("cp src/madis/configuration/* {} -Rf".format(madics_folder))

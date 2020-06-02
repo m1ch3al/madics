@@ -1,0 +1,3 @@
+configuration-name: inclinometer
+driver-module: madis.sensors.dummy
+driver-class: DummySensorAccelGyro

@@ -1,0 +1,3 @@
+configuration-name: environmental
+driver-module: madis.sensors.dummy
+driver-class: DummySensorTempPressureAltitude
