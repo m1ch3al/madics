@@ -1,0 +1,19 @@
+
+#=====================================================
+#      S E N S O R S   C O N F I G U R A T I O N
+#=====================================================
+
+# Configuration for GPS
+gps-sensor-configuration: sensors/dummy_gps.yaml
+
+# Configuration for Accelerometer/Gyroscope
+accelerometer_gyroscope-sensor-configuration: sensors/dummy_accel_gyro.yaml
+
+# Configuration for Sonar (Obstacle Avoidance)
+obstacle-avoidance-sensor-configuration: sensors/dummy_sonar.yaml
+
+# Configuration for Enviromental sensor
+environmental-sensor-configuration: sensors/dummy_temp_pressure.yaml
+
+#-------------------------------------------------------------------------------------
+
