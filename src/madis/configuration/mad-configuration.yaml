@@ -18,3 +18,36 @@ sensors-configuration:
 
 #-------------------------------------------------------------------------------------
 
+# ROS Node publisher <---> association with sensors
+ros-nodes:
+  role_navigation:
+    sensor-name: gps
+    module-name: madis.ros.generic_mad_publisher
+    script-name: ../ros/generic_mad_publisher.py
+    ros-rate: 2
+    ros-node-name: mad_navigator
+    ros-topic-name: navigation
+
+  role_environment:
+    sensor-name: environmental
+    module-name: madis.ros.generic_mad_publisher
+    script-name: ../ros/generic_mad_publisher.py
+    ros-rate: 2
+    ros-node-name: mad_environmental
+    ros-topic-name: environment
+
+  role_stability:
+    sensor-name: inclinometer
+    module-name: madis.ros.generic_mad_publisher
+    script-name: ../ros/generic_mad_publisher.py
+    ros-rate: 2
+    ros-node-name: mad_stabilizer
+    ros-topic-name: stability
+
+  role_obstacles:
+    sensor-name: sonar
+    module-name: madis.ros.generic_mad_publisher
+    script-name: ../ros/generic_mad_publisher.py
+    ros-rate: 2
+    ros-node-name: mad_obstacles
+    ros-topic-name: obstacle
