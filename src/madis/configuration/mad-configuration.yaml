@@ -1,4 +1,12 @@
 
+# PRELOAD action to do
+
+preload:
+  wait-at-boot: False
+  seconds-to-wait: 10
+
+#-------------------------------------------------------------------------------------
+
 #=====================================================
 #      S E N S O R S   C O N F I G U R A T I O N
 #=====================================================
@@ -14,7 +22,7 @@ sensors-configuration:
   obstacle-avoidance-configuration: sensors/dummy_sonar.yaml
 
   # Configuration for Enviromental sensor
-  environmental-configuration: sensors/dummy_temp_pressure.yaml
+  environmental-configuration: sensors/bme280.yaml
 
 #-------------------------------------------------------------------------------------
 
