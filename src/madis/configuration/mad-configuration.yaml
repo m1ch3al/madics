@@ -13,10 +13,10 @@ preload:
 
 sensors-configuration:
   # Configuration for GPS
-  gps-configuration: sensors/dummy_gps.yaml
+  gps-configuration: sensors/bn880.yaml
 
   # Configuration for Accelerometer/Gyroscope
-  accelerometer_gyroscope-configuration: sensors/dummy_accel_gyro.yaml
+  accelerometer_gyroscope-configuration: sensors/mma845x.yaml
 
   # Configuration for Sonar (Obstacle Avoidance)
   obstacle-avoidance-configuration: sensors/dummy_sonar.yaml
