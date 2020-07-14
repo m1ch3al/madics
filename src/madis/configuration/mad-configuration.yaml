@@ -1,6 +1,6 @@
 
 # PRELOAD action to do
-
+# NEED TO IMPLEMENT - NOT NOW because I want to realize flight-controller
 preload:
   wait-at-boot: False
   seconds-to-wait: 10
@@ -11,12 +11,53 @@ preload:
 #      S E N S O R S   C O N F I G U R A T I O N
 #=====================================================
 
+motors-configuration:
+  - single-motor-configuration:
+      enable: true
+      id: 1
+      gpio_pin: 20
+      min_value: 1100
+      max_value: 1700
+      driver-module: madis.core.motors
+      driver-class: Motor
+
+  - single-motor-configuration:
+      enable: true
+      id: 2
+      gpio_pin: 16
+      min_value: 1100
+      max_value: 1700
+      driver-module: madis.core.motors
+      driver-class: Motor
+
+  - single-motor-configuration:
+      enable: false
+      id: 3
+      gpio_pin: 20
+      min_value: 1100
+      max_value: 1700
+      driver-module: madis.core.motors
+      driver-class: Motor
+
+  - single-motor-configuration:
+      enable: false
+      id: 4
+      gpio_pin: 20
+      min_value: 1100
+      max_value: 1700
+      driver-module: madis.core.motors
+      driver-class: Motor
+
+
+#-------------------------------------------------------------------------------------
+
 sensors-configuration:
   # Configuration for GPS
   gps-configuration: sensors/bn880.yaml
 
   # Configuration for Accelerometer/Gyroscope
   accelerometer_gyroscope-configuration: sensors/mma845x.yaml
+  #accelerometer_gyroscope-configuration: sensors/dummy_accel_gyro.yaml
 
   # Configuration for Sonar (Obstacle Avoidance)
   obstacle-avoidance-configuration: sensors/dummy_sonar.yaml
@@ -60,3 +101,11 @@ ros-nodes:
     ros-rate: 3
     ros-node-name: mad_obstacles
     ros-topic-name: obstacle
+
+  role_motor_1:
+    sensor-name: motor_1
+    module-name: madis.ros.generic_mad_publisher
+    script-name: ../ros/generic_mad_publisher.py
+    ros-rate: 10
+    ros-node-name: mad_motor_1
+    ros-topic-name: motor_1
