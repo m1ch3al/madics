@@ -2,10 +2,9 @@
 # PRELOAD action to do
 # NEED TO IMPLEMENT - NOT NOW because I want to realize flight-controller
 preload:
-  #command-to-exec-before: roscore
-  command-to-exec-before:
-  wait-at-boot: False
-  seconds-to-wait: 10
+  command-to-exec-before: export ROS_MASTER_URI=http://192.168.1.111:11311; roscore
+  wait-at-boot: True
+  seconds-to-wait: 2
   command-to-exec-after:
 
 #-------------------------------------------------------------------------------------
