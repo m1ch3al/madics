@@ -9,8 +9,8 @@ handlers:
         class: logging.FileHandler
         filename: "/tmp/mad_log_%Y%m%dT%H%M%S.log"
         formatter: standard
-        level: INFO
+        level: DEBUG
 
 root:
-    level: INFO
+    level: DEBUG
     handlers: [file_handler]

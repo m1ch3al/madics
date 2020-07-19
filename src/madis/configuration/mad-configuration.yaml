@@ -2,8 +2,11 @@
 # PRELOAD action to do
 # NEED TO IMPLEMENT - NOT NOW because I want to realize flight-controller
 preload:
+  #command-to-exec-before: roscore
+  command-to-exec-before:
   wait-at-boot: False
   seconds-to-wait: 10
+  command-to-exec-after:
 
 #-------------------------------------------------------------------------------------
 
@@ -102,10 +105,4 @@ ros-nodes:
     ros-node-name: mad_obstacles
     ros-topic-name: obstacle
 
-  role_motor_1:
-    sensor-name: motor_1
-    module-name: madis.ros.generic_mad_publisher
-    script-name: ../ros/generic_mad_publisher.py
-    ros-rate: 10
-    ros-node-name: mad_motor_1
-    ros-topic-name: motor_1
+
