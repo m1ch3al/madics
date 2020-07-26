@@ -4,7 +4,7 @@
 preload:
   command-to-exec-before:
   wait-at-boot: True
-  seconds-to-wait: 2
+  seconds-to-wait: 0
   command-to-exec-after:
 
 #-------------------------------------------------------------------------------------
@@ -71,4 +71,22 @@ sensors-configuration:
 
 #-------------------------------------------------------------------------------------
 
+network-configuration:
+  - udp-server-configuration:
+      sensor: gps
+      port: 10000
+      # hertz
+      interval: 1
+
+  - udp-server-configuration:
+      sensor: environmental
+      port: 10001
+      # hertz
+      interval: 1
+
+  - udp-server-configuration:
+      sensor: inclinometer
+      port: 10002
+      # hertz
+      interval: 5
 
